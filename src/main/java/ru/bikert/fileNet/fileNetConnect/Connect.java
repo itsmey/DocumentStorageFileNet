@@ -1,9 +1,7 @@
 package ru.bikert.fileNet.fileNetConnect;
 
-import com.filenet.api.core.Connection;
-import com.filenet.api.core.Domain;
-import com.filenet.api.core.Factory;
-import com.filenet.api.core.ObjectStore;
+import com.filenet.api.constants.RefreshMode;
+import com.filenet.api.core.*;
 import com.filenet.api.exception.EngineRuntimeException;
 import com.filenet.api.util.UserContext;
 
@@ -12,9 +10,9 @@ import javax.security.auth.Subject;
 
 public class Connect {
 
-    private UserContext userContext;
-    private Subject subject;
-    private ObjectStore objectStore;
+    private static ObjectStore objectStore;
+    private static UserContext userContext;
+    private static Subject subject;
 
     public void connect() throws Exception {
         Connection conn = Factory.Connection.getConnection(ConstantConnect.URL);
@@ -23,23 +21,18 @@ public class Connect {
 
         userContext.pushSubject(subject);
 
-        try {
-            Domain domain = Factory.Domain.getInstance(conn, null);
+        Domain domain = Factory.Domain.getInstance(conn, null);
 
-            objectStore = Factory.ObjectStore.fetchInstance(domain,
+        objectStore = Factory.ObjectStore.fetchInstance(domain,
                     ConstantConnect.objectStoreName, null);
 
-            Object folder = objectStore.get_RootFolder();
+    }
 
-            System.out.println(objectStore.get_DatabaseSchemaName() +"   "+  objectStore.get_SchemaVersion());
-            System.out.println(objectStore.getConnection().getURI());
-
-
-        } catch (EngineRuntimeException ex) {
-            throw new Exception(ex.getExceptionCode().toString());
-        } finally {
-            userContext.popSubject();
-        }
+    public static ObjectStore getObjectStore(){
+        return objectStore;
+    }
+    public static UserContext getUserContext() {
+        return userContext;
     }
 
 }
