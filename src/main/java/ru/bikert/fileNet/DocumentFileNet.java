@@ -3,8 +3,10 @@ package ru.bikert.fileNet;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ObjectStore;
 import com.filenet.api.exception.EngineRuntimeException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import ru.bikert.fileNet.fileNetConnect.Connect;
 import ru.bikert.fileNet.operations.*;
 
@@ -17,6 +19,7 @@ public class DocumentFileNet {
 
     private static Logger logger = LoggerFactory.getLogger(DocumentFileNet.class);
     private static List<Operation> operations = new ArrayList<Operation>();
+
     private static boolean exit = true;
     private static String input;
     private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -35,16 +38,18 @@ public class DocumentFileNet {
             os = Connect.getObjectStore();
             currentFolder = os.get_RootFolder();
 
-
             operations.add(new FolderCreateOperation());
             operations.add(new DocumentCreateOperation());
             operations.add(new HelpOperation());
             operations.add(new GoToOperation());
             operations.add(new PrintHierarchyOperation());
             operations.add(new GoToParentOperation());
-            operations.add(new PrintCurrentOperatin());
+            operations.add(new PrintCurrentOperation());
+            operations.add(new DeliteOperation());
+            operations.add(new ExitOperation());
 
             new HelpOperation().perform(arguments);
+
             while (exit) {
                 System.out.println("go...");
                 System.out.println(currentFolder.get_PathName());
@@ -58,20 +63,24 @@ public class DocumentFileNet {
                     if (op.getTitle().equals(line[0])) {
                         System.out.println("perform " + op.getTitle() + " with arguments " + arguments);
                         op.perform(arguments);
-                        arguments.clear();
                     }
                 }
+                arguments.clear();
             }
+
         } catch (EngineRuntimeException ex) {
             System.out.println(ex.toString());
             throw new Exception(ex.getExceptionCode().toString());
         } finally {
             Connect.getUserContext().popSubject();
+            Operation.closeReader();
         }
     }
+
     public static Folder getCurrentFolder() {
         return currentFolder;
     }
+
     public static List<Operation> getOperation(){
         return operations;
     }
@@ -83,4 +92,6 @@ public class DocumentFileNet {
     public static void setCurrentFolder(Folder currentFolder) {
         DocumentFileNet.currentFolder = currentFolder;
     }
+
+    public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
 }

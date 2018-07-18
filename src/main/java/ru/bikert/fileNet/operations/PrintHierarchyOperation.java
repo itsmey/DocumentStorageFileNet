@@ -12,8 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PrintHierarchyOperation extends Operation {
-    static ObjectStore objStore;
-    static String i = " ";
+    private static ObjectStore objStore;
 
     public PrintHierarchyOperation() {
         super(Constants.OperationNames.PRINT, " ", Constants.OperationDescription.PRINT);
@@ -23,15 +22,13 @@ public class PrintHierarchyOperation extends Operation {
         objStore = Connect.getObjectStore();
         String folder = DocumentFileNet.getPath();
 
+        String i = " ";
         getHierarchy(folder, i);
-
-
     }
-    public static void getHierarchy(String path, String i){
-        try {
-            // Fetching Parent folder
-            Folder folderOj= Factory.Folder.fetchInstance(objStore, path, null);
 
+    private static void getHierarchy(String path, String i){
+        try {
+            Folder folderOj= Factory.Folder.fetchInstance(objStore, path, null);
             FolderSet subFolders= folderOj.get_SubFolders();
             Iterator it = subFolders.iterator();
             while(it.hasNext()){
@@ -49,13 +46,10 @@ public class PrintHierarchyOperation extends Operation {
             DocumentSet documents = folderOj.get_ContainedDocuments();
             Iterator itDoc = documents.iterator();
             while(itDoc.hasNext()) {
-                //Retrieving documents
                 Document retrieveDoc = (Document) itDoc.next();
                 String name = retrieveDoc.get_Name();
                 System.out.println(i + "Document: " + name);
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

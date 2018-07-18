@@ -2,8 +2,10 @@ package ru.bikert.fileNet.operations;
 
 import com.filenet.api.constants.RefreshMode;
 import com.filenet.api.core.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.fileNetConnect.Connect;

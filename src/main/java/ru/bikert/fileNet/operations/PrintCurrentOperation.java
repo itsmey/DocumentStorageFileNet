@@ -6,17 +6,17 @@ import com.filenet.api.core.Document;
 import com.filenet.api.core.Factory;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ObjectStore;
+
 import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-public class PrintCurrentOperatin extends Operation {
+public class PrintCurrentOperation extends Operation {
 
-    public PrintCurrentOperatin() {
+    public PrintCurrentOperation() {
         super(Constants.OperationNames.CURRENT_PRINT, "", Constants.OperationDescription.CURRENT_PRINT);
     }
 

@@ -4,11 +4,11 @@ import com.filenet.api.constants.RefreshMode;
 import com.filenet.api.core.Factory;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ObjectStore;
+
 import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 
-import java.io.IOException;
 import java.util.List;
 
 public class FolderCreateOperation extends Operation {
