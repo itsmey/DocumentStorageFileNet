@@ -17,7 +17,7 @@ public abstract class Operation {
 
     protected static BufferedReader bufferedReader = null;
 
-    public abstract void perform (List<String> arguments) throws  IOException;
+    public abstract void perform (List<String> arguments);
 
     public Operation(String title, String argumentsNameOperationHelper, String description) {
         this.title = title;

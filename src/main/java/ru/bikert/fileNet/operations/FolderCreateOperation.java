@@ -19,7 +19,7 @@ public class FolderCreateOperation extends Operation {
         super(Constants.OperationNames.FOLDER_CREATE, "<name>", Constants.OperationDescription.FOLDER_CREATE);
     }
 
-    public void perform(List<String> arguments) throws IOException {
+    public void perform(List<String> arguments) {
         System.out.println(FolderCreateOperation.class);
         if (arguments.size() > 0) {
             Folder newFolder = Factory.Folder.createInstance(os, null);

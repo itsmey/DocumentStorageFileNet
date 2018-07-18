@@ -8,6 +8,7 @@ import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class GoToOperation extends Operation {
@@ -18,11 +19,18 @@ public class GoToOperation extends Operation {
 
     @Override
     public void perform(List<String> arguments) {
-        String path = DocumentFileNet.getPath() + arguments.get(0);
-        Folder f = Factory.Folder.fetchInstance(Connect.getObjectStore(),path, null);
+        String path = DocumentFileNet.getPath() + "/" +arguments.get(0);
+        Iterator it = DocumentFileNet.getCurrentFolder().get_SubFolders().iterator();
+        while (it.hasNext()){
+            Folder folder = (Folder) it.next();
+            if(folder.get_FolderName().equals(arguments.get(0))){
 
-        DocumentFileNet.setCurrentFolder(f);
-        System.out.println(f);
-
+                Folder f = Factory.Folder.fetchInstance(Connect.getObjectStore(),path, null);
+                DocumentFileNet.setCurrentFolder(f);
+                System.out.println(f);
+                return;
+            }
+        }
+        System.out.println(Constants.OperationErrors.NOT_A_PARENT);
     }
 }

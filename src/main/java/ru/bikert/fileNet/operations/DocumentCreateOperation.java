@@ -19,30 +19,17 @@ public class DocumentCreateOperation extends Operation {
 
     @Override
     public void perform(List<String> arguments) {
-//        if (arguments.size()>0) {
-//            if (arguments.get(0).matches(Constants.REGEXP_SPLIT_ARGS)) {
-//
                 Document doc = Factory.Document.createInstance(os, null);
                 doc.getProperties().putValue("DocumentTitle", arguments.get(0));
-//                if (arguments.size()>1) {
-//                    doc.getProperties().putValue("DocumentTitle", arguments.get(0));
-//                }
                 doc.save(RefreshMode.NO_REFRESH);
-
                 // получаем папку-контейнер
                 Folder container = Factory.Folder.getInstance(os, null, DocumentFileNet.getPath());
-
                 // создаём инстанс DynamicReferentialContainmentRelationship
                 DynamicReferentialContainmentRelationship drcr =
                         Factory.DynamicReferentialContainmentRelationship.createInstance(os, null);
-
                 // назначаем свойства Head и Tail
                 drcr.set_Head(doc);
                 drcr.set_Tail(container);
                 drcr.save(RefreshMode.NO_REFRESH);
-//                }
-//        } else {
-//            System.out.println(Constants.OperationErrors.NULL_NAME);
-//        }
     }
 }
