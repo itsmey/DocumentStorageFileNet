@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
         String TAB = "  ";
         String CURRENT_FOLDER = "You are in folder: ";
         String FOLDER_IS = "Folder is ";
-        String DOCUMENT_IS = "Document is ";
+        String DOCUMENT_IS = "APDocument is ";
         String EMPTY_STRING = "[Пустой]";
         String DATE_CREATE = " date create: " ;
         String DOCUMENT_COMMENT = " Comment: ";

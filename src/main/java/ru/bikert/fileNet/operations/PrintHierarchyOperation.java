@@ -48,7 +48,7 @@ public class PrintHierarchyOperation extends Operation {
             while(itDoc.hasNext()) {
                 Document retrieveDoc = (Document) itDoc.next();
                 String name = retrieveDoc.get_Name();
-                System.out.println(i + "Document: " + name);
+                System.out.println(i + "APDocument: " + name);
             }
         } catch (Exception e) {
             e.printStackTrace();

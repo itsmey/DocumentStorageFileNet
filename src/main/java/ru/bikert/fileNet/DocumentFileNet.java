@@ -1,9 +1,11 @@
 package ru.bikert.fileNet;
 
+import com.filenet.api.core.CustomObject;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ObjectStore;
 import com.filenet.api.exception.EngineRuntimeException;
 
+import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,6 +29,8 @@ public class DocumentFileNet {
     private static ObjectStore os;
     private static Folder currentFolder;
 
+    private static ReferentialContainmentRelationshipImpl currentEmplouee;
+
 
 
 
@@ -37,6 +41,11 @@ public class DocumentFileNet {
             fileNet.connect();
             os = Connect.getObjectStore();
             currentFolder = os.get_RootFolder();
+            myRootFolder();
+            //createEmployee();
+
+            ReplaceEmployee.retrieving();
+            ReplaceEmployee.replace();
 
             operations.add(new FolderCreateOperation());
             operations.add(new DocumentCreateOperation());
@@ -51,9 +60,7 @@ public class DocumentFileNet {
             new HelpOperation().perform(arguments);
 
             while (exit) {
-                System.out.println("go...");
-                System.out.println(currentFolder.get_PathName());
-                System.out.println(currentFolder.get_SubFolders().isEmpty());
+                System.out.println("\n" + currentFolder.get_PathName());
                 input = bufferedReader.readLine();
                 String[] line = input.split("\\s");
                 for (int i = 1; i < line.length; i++) {
@@ -94,4 +101,26 @@ public class DocumentFileNet {
     }
 
     public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
+
+    public static ReferentialContainmentRelationshipImpl getCurrentEmplouee() { return currentEmplouee; }
+
+    public static void setCurrentEmplouee(ReferentialContainmentRelationshipImpl currentEmplouee) { DocumentFileNet.currentEmplouee = currentEmplouee; }
+
+
+    private static void myRootFolder(){
+        if(!OperationHelper.folder("Программа адаптации", os.get_RootFolder())){
+            new FolderCreateOperation().createRootFolder("Программа адаптации");
+        }
+        arguments.add("Программа адаптации");
+        new GoToOperation().perform(arguments);
+        arguments.clear();
+        String[] name = {"приказы", "договоры", "заявления", "cотрудники"};
+        for (String s: name) {
+            if(!OperationHelper.folder(s,currentFolder)){
+                new FolderCreateOperation().createRootFolder(s);
+            }
+        }
+
+    }
+
 }

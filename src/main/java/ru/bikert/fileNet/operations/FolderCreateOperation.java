@@ -29,4 +29,11 @@ public class FolderCreateOperation extends Operation {
             System.out.println("Folder is create");
         } else System.out.println(Constants.OperationErrors.NULL_NAME);
     }
+    public void createRootFolder(String name){
+        Folder newFolder = Factory.Folder.createInstance(os, null);
+        newFolder.set_Parent(DocumentFileNet.getCurrentFolder());
+        newFolder.set_FolderName(name);
+        newFolder.save(RefreshMode.NO_REFRESH);
+        System.out.println("Folder is create");
+    }
 }

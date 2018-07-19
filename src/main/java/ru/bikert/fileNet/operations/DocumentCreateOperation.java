@@ -1,5 +1,7 @@
 package ru.bikert.fileNet.operations;
 
+import com.filenet.api.constants.AutoUniqueName;
+import com.filenet.api.constants.DefineSecurityParentage;
 import com.filenet.api.constants.RefreshMode;
 import com.filenet.api.core.*;
 
@@ -27,11 +29,16 @@ public class DocumentCreateOperation extends Operation {
                 // получаем папку-контейнер
                 Folder container = Factory.Folder.getInstance(os, null, DocumentFileNet.getPath());
                 // создаём инстанс DynamicReferentialContainmentRelationship
-                DynamicReferentialContainmentRelationship drcr =
-                        Factory.DynamicReferentialContainmentRelationship.createInstance(os, null);
+//                DynamicReferentialContainmentRelationship drcr = Factory.DynamicReferentialContainmentRelationship.createInstance(os, null);
                 // назначаем свойства Head и Tail
-                drcr.set_Head(doc);
-                drcr.set_Tail(container);
+//                drcr.set_Head(doc);
+//                drcr.set_Tail(container);
+//                drcr.set_ContainmentName("containment " + arguments.get(0));
+                ReferentialContainmentRelationship drcr = container.file(
+                        doc,
+                        AutoUniqueName.NOT_AUTO_UNIQUE,
+                        arguments.get(0),
+                        DefineSecurityParentage.DEFINE_SECURITY_PARENTAGE);
                 drcr.save(RefreshMode.NO_REFRESH);
     }
 }

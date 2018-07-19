@@ -29,7 +29,7 @@ public class PrintCurrentOperation extends Operation {
         while(itDoc.hasNext()) {
             Document retrieveDoc = (Document) itDoc.next();
             String name = retrieveDoc.get_Name();
-            System.out.println("Document: " + name);
+            System.out.println("APDocument: " + name);
         }
         FolderSet subFolders= folderOj.get_SubFolders();
         Iterator it = subFolders.iterator();
