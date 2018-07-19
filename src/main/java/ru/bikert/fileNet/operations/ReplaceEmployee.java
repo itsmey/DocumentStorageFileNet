@@ -37,7 +37,7 @@ public class ReplaceEmployee extends Operation {
     }
 
     public static void replace(){
-        DocumentFileNet.setCurrentEmplouee(employee.get((int) Math.random() * employee.size()));
+        DocumentFileNet.setCurrentEmployee(employee.get((int) Math.random() * employee.size()));
     }
 
     public static void setEmployee( ReferentialContainmentRelationshipImpl employee) {
@@ -45,7 +45,7 @@ public class ReplaceEmployee extends Operation {
     }
 
     public void perform(List<String> arguments) {
-        DocumentFileNet.setCurrentEmplouee(employee.get((int) Math.random() * employee.size()));
+        DocumentFileNet.setCurrentEmployee(employee.get((int) Math.random() * employee.size()));
     }
 
     public static void createEmployee(){

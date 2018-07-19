@@ -1,6 +1,5 @@
 package ru.bikert.fileNet;
 
-import com.filenet.api.core.CustomObject;
 import com.filenet.api.core.Folder;
 import com.filenet.api.core.ObjectStore;
 import com.filenet.api.exception.EngineRuntimeException;
@@ -29,7 +28,7 @@ public class DocumentFileNet {
     private static ObjectStore os;
     private static Folder currentFolder;
 
-    private static ReferentialContainmentRelationshipImpl currentEmplouee;
+    private static ReferentialContainmentRelationshipImpl currentEmployee;
 
 
 
@@ -42,7 +41,6 @@ public class DocumentFileNet {
             os = Connect.getObjectStore();
             currentFolder = os.get_RootFolder();
             myRootFolder();
-            //createEmployee();
 
             ReplaceEmployee.retrieving();
             ReplaceEmployee.replace();
@@ -61,6 +59,8 @@ public class DocumentFileNet {
 
             while (exit) {
                 System.out.println("\n" + currentFolder.get_PathName());
+                System.out.println(currentEmployee.get_Name());
+
                 input = bufferedReader.readLine();
                 String[] line = input.split("\\s");
                 for (int i = 1; i < line.length; i++) {
@@ -102,9 +102,7 @@ public class DocumentFileNet {
 
     public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
 
-    public static ReferentialContainmentRelationshipImpl getCurrentEmplouee() { return currentEmplouee; }
-
-    public static void setCurrentEmplouee(ReferentialContainmentRelationshipImpl currentEmplouee) { DocumentFileNet.currentEmplouee = currentEmplouee; }
+    public static void setCurrentEmployee(ReferentialContainmentRelationshipImpl currentEmployee) { DocumentFileNet.currentEmployee = currentEmployee; }
 
 
     private static void myRootFolder(){
