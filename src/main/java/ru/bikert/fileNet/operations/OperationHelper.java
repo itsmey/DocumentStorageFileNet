@@ -19,4 +19,15 @@ public class OperationHelper {
         }
         return false;
     }
+    public static Folder get_Folder(String name){
+        Iterator it = DocumentFileNet.getCurrentFolder().get_SubFolders().iterator();
+        while (it.hasNext()){
+            Folder folder = (Folder) it.next();
+            if(folder.get_FolderName().equals(name)){
+                return folder;
+            }
+        }
+        return null;
+    }
+
 }

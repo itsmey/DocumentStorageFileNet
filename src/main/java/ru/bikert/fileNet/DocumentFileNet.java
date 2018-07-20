@@ -8,6 +8,7 @@ import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import ru.bikert.fileNet.TypeContainable.APDocument;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 import ru.bikert.fileNet.operations.*;
 
@@ -27,6 +28,8 @@ public class DocumentFileNet {
     private static List<String> arguments = new ArrayList<String>();
     private static ObjectStore os;
     private static Folder currentFolder;
+
+
 
     private static ReferentialContainmentRelationshipImpl currentEmployee;
 
@@ -54,6 +57,7 @@ public class DocumentFileNet {
             operations.add(new PrintCurrentOperation());
             operations.add(new DeliteOperation());
             operations.add(new ExitOperation());
+            operations.add(new CreateOrderOperation());
 
             new HelpOperation().perform(arguments);
 
@@ -103,6 +107,8 @@ public class DocumentFileNet {
     public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
 
     public static void setCurrentEmployee(ReferentialContainmentRelationshipImpl currentEmployee) { DocumentFileNet.currentEmployee = currentEmployee; }
+
+    public static ReferentialContainmentRelationshipImpl getCurrentEmployee() { return currentEmployee; }
 
 
     private static void myRootFolder(){

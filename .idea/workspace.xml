@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="195082c1-52ad-476f-a1dd-664031ca7761" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/ReplaceEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/ReplaceEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="APDocument.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="APDocument.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+            <state relative-caret-position="277">
+              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,11 +33,76 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Connect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1117#1118#0" expanded="true" />
+                <element signature="e#1151#1152#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocumentFileNet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="110" column="75" selection-start-line="110" selection-start-column="57" selection-end-line="110" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateOrderOperation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="24" column="97" lean-forward="true" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OperationHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constans.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DocumentCreateOperation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/DocumentCreateOperation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+            <state relative-caret-position="455">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,9 +130,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateDocOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/HelpOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/PrintHierarhyOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/GoToParentOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/PrintCurrentOperatin.java" />
@@ -71,18 +138,21 @@
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/PrintHierarchyOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/Operation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/ExitOperation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/GoToOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/DeliteOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/DocumentCreateOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/FolderCreateOperation.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/Document.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/ContractDocument.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateEmployee.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/ReplaceEmployee.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/Employee.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java" />
       </list>
     </option>
   </component>
@@ -116,9 +186,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,6 +239,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="fileNet" type="462c0819:PsiDirectoryNode" />
               <item name="operations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DocumentStorageFileNet" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DocumentStorageFileNet" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fileNet" type="462c0819:PsiDirectoryNode" />
+              <item name="operations" type="462c0819:PsiDirectoryNode" />
+              <item name="Constans.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </path>
             <path>
               <item name="DocumentStorageFileNet" type="b2602c69:ProjectViewProjectNode" />
@@ -305,16 +385,16 @@
       <workItem from="1531839736764" duration="1243000" />
       <workItem from="1531896423891" duration="22069000" />
       <workItem from="1531983889905" duration="8339000" />
-      <workItem from="1531993923534" duration="17679000" />
+      <workItem from="1531993923534" duration="17793000" />
+      <workItem from="1532071514766" duration="20427000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71545000" />
+    <option name="totallyTimeSpent" value="92086000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="11" />
@@ -326,18 +406,18 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.64270836" visible="true" weight="0.5611052" />
+      <window_info active="true" anchor="bottom" id="Run" order="7" sideWeight="0.64270836" visible="true" weight="0.2996812" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.4984375" weight="0.3995749" />
+      <window_info anchor="bottom" id="Debug" order="8" sideWeight="0.4984375" weight="0.63974494" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
@@ -354,16 +434,48 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="26" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java</url>
+          <line>22</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="line.length" language="JAVA" />
+        <watch expression="folder.get_FolderName()" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>folder.get_FolderName()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>line.length</expression-string>
         <language-id>JAVA</language-id>
@@ -372,18 +484,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1020">
@@ -552,16 +652,6 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/HelpOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/filenet/Jace/5.2.1/Jace-5.2.1.jar!/com/filenet/apiimpl/collection/EngineSetIterator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
@@ -573,13 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="24" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -628,16 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="17" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/Operation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -683,13 +756,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/ReplaceEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -709,25 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" column="62" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1117#1118#0" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/DocumentCreateOperation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateEmployee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -740,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="23" column="6" lean-forward="true" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        <state relative-caret-position="455">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -750,8 +797,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/TypeContainable/APDocument.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+        <state relative-caret-position="277">
+          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/fileNetConnect/Connect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1117#1118#0" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/DocumentCreateOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="18" column="4" lean-forward="true" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/HelpOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/OperationHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/Constans.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/DocumentFileNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="110" column="75" selection-start-line="110" selection-start-column="57" selection-end-line="110" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/bikert/fileNet/operations/CreateOrderOperation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="97" lean-forward="true" selection-start-line="24" selection-start-column="97" selection-end-line="24" selection-end-column="97" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,8 +1,6 @@
 package ru.bikert.fileNet.fileNetConnect;
 
-import com.filenet.api.constants.RefreshMode;
 import com.filenet.api.core.*;
-import com.filenet.api.exception.EngineRuntimeException;
 import com.filenet.api.util.UserContext;
 
 import javax.security.auth.Subject;
