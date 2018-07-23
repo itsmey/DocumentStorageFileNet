@@ -5,6 +5,7 @@ import com.filenet.api.core.*;
 import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
 import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
+import ru.bikert.fileNet.TypeContainable.Employee;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ReplaceEmployee extends Operation {
 
-    private static List< ReferentialContainmentRelationshipImpl> employee = new ArrayList< ReferentialContainmentRelationshipImpl>();
+    private static List<IndependentObject> employee = new ArrayList<IndependentObject>();
 
     public ReplaceEmployee() {
         super("replace", "", "Replace Employee random");
@@ -30,17 +31,18 @@ public class ReplaceEmployee extends Operation {
         }
         Iterator iterator = relationship.iterator();
         while (iterator.hasNext()){
-            ReferentialContainmentRelationshipImpl o = (ReferentialContainmentRelationshipImpl) iterator.next();
-            setEmployee(o);
+            ReferentialContainmentRelationship o = (ReferentialContainmentRelationship) iterator.next();
+            setEmployee(o.get_Head());
         }
 
     }
 
     public static void replace(){
-        DocumentFileNet.setCurrentEmployee(employee.get((int) Math.random() * employee.size()));
+        //DocumentFileNet.setCurrentEmployee(employee.get((int)(Math.random() * employee.size())));
+        DocumentFileNet.setCurrentEmployee(employee.get(2));
     }
 
-    public static void setEmployee( ReferentialContainmentRelationshipImpl employee) {
+    public static void setEmployee( IndependentObject employee) {
         ReplaceEmployee.employee.add(employee);
     }
 

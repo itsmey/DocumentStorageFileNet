@@ -15,7 +15,7 @@ public class CreateEmployee {
 
 
     public void create(String fullName){
-        CustomObject myObject = Factory.CustomObject.createInstance(os,"40FEB164-0000-CC1C-B8C5-C153F8FDE2A3");
+        CustomObject myObject = Factory.CustomObject.createInstance(os,"Employee");
         Properties props = myObject.getProperties();
         props.putValue("FullName",fullName);
         myObject.save(RefreshMode.REFRESH);

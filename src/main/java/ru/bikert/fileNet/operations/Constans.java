@@ -1,8 +1,10 @@
 package ru.bikert.fileNet.operations;
 
 import java.text.SimpleDateFormat;
+import java.util.LinkedList;
+import java.util.List;
 
-    interface Constants {
+interface Constants {
         String REGEXP_SPLIT_ARGS = ".*\\w.*";
         String INDENT = " ";
         String TAB = "  ";
@@ -62,7 +64,7 @@ import java.text.SimpleDateFormat;
             String dateApproval = "dateApproval";           //Дата утверждения
             String documentStatus = "documentStatus";       //Статус документа
             String numberDocument = "numberDocument";       //Номер документа
-            String Responsible = "Responsible";             //Ответственный
+            String Responsible = "Responsible1";            //Ответственный
             String receiptDate = "receiptDate";             //Дата поступления
             String Counterparty="Counterparty";             //Контрагент
         }

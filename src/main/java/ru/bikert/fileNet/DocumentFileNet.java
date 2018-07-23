@@ -1,9 +1,11 @@
 package ru.bikert.fileNet;
 
 import com.filenet.api.core.Folder;
+import com.filenet.api.core.IndependentObject;
 import com.filenet.api.core.ObjectStore;
 import com.filenet.api.exception.EngineRuntimeException;
 
+import com.filenet.api.property.Property;
 import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +33,7 @@ public class DocumentFileNet {
 
 
 
-    private static ReferentialContainmentRelationshipImpl currentEmployee;
+    private static IndependentObject currentEmployee;
 
 
 
@@ -47,6 +49,12 @@ public class DocumentFileNet {
 
             ReplaceEmployee.retrieving();
             ReplaceEmployee.replace();
+           // TrafficDocument trafficDocument = new TrafficDocument();
+           // trafficDocument.trafficStatus(OperationHelper.get_Document("Order6","/Программа адаптации/приказы" ));
+           // AddContent addContent = new AddContent();
+           // addContent.setDoc("C:\\Users\\ebikert\\Documents\\work\\System_events_Filenet.docx", "/Программа адаптации/приказы", "Order6");
+            RetrievingDocumentContent.retrievingContent("/Программа адаптации/приказы/Order6");
+
 
             operations.add(new FolderCreateOperation());
             operations.add(new DocumentCreateOperation());
@@ -63,7 +71,7 @@ public class DocumentFileNet {
 
             while (exit) {
                 System.out.println("\n" + currentFolder.get_PathName());
-                System.out.println(currentEmployee.get_Name());
+                System.out.println(currentEmployee.getProperties().get("FullName").getStringValue());
 
                 input = bufferedReader.readLine();
                 String[] line = input.split("\\s");
@@ -106,9 +114,9 @@ public class DocumentFileNet {
 
     public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
 
-    public static void setCurrentEmployee(ReferentialContainmentRelationshipImpl currentEmployee) { DocumentFileNet.currentEmployee = currentEmployee; }
+    public static void setCurrentEmployee(IndependentObject currentEmployee) { DocumentFileNet.currentEmployee = currentEmployee; }
 
-    public static ReferentialContainmentRelationshipImpl getCurrentEmployee() { return currentEmployee; }
+    public static IndependentObject getCurrentEmployee() { return currentEmployee; }
 
 
     private static void myRootFolder(){
