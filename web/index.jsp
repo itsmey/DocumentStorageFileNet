@@ -1,16 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ebikert
-  Date: 23.07.2018
-  Time: 18:19
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title></title>
+  <title>DocumentStorage</title>
 </head>
 <body>
+
+<p> dvgwbrer regqwe tgfregqre ewuf ;E</p>
 ${textA}
 ${textB}
 </body>

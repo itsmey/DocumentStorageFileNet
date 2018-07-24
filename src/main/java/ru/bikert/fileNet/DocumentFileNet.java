@@ -7,13 +7,13 @@ import com.filenet.api.exception.EngineRuntimeException;
 
 import com.filenet.api.property.Property;
 import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import ru.bikert.fileNet.TypeContainable.APDocument;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 import ru.bikert.fileNet.operations.*;
 
+import javax.inject.Named;
+import javax.servlet.http.HttpServlet;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -21,7 +21,6 @@ import java.util.List;
 
 public class DocumentFileNet {
 
-    private static Logger logger = LoggerFactory.getLogger(DocumentFileNet.class);
     private static List<Operation> operations = new ArrayList<Operation>();
 
     private static boolean exit = true;
@@ -31,14 +30,9 @@ public class DocumentFileNet {
     private static ObjectStore os;
     private static Folder currentFolder;
 
-
-
     private static IndependentObject currentEmployee;
 
-
-
-
-    public static void main(String[] args) throws Exception {
+    public static void start() throws Exception {
 
         try {
             Connect fileNet = new Connect();
