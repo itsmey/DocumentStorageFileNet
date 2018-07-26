@@ -13,27 +13,32 @@ import java.util.List;
 
 public class FolderCreateOperation extends Operation {
 
-    ObjectStore os = Connect.getObjectStore();
+    //ObjectStore os = Connect.getObjectStore();
 
     public FolderCreateOperation() {
         super(Constants.OperationNames.FOLDER_CREATE, "<name>", Constants.OperationDescription.FOLDER_CREATE);
     }
 
     public void perform(List<String> arguments) {
-        System.out.println(FolderCreateOperation.class);
-        if (arguments.size() > 0) {
-            Folder newFolder = Factory.Folder.createInstance(os, null);
-            newFolder.set_Parent(DocumentFileNet.getCurrentFolder());
-            newFolder.set_FolderName(arguments.get(0));
-            newFolder.save(RefreshMode.NO_REFRESH);
-            System.out.println("Folder is create");
-        } else System.out.println(Constants.OperationErrors.NULL_NAME);
+//        System.out.println(FolderCreateOperation.class);
+//        if (arguments.size() > 0) {
+//            Folder newFolder = Factory.Folder.createInstance(os, null);
+//            newFolder.set_Parent(DocumentFileNet.getCurrentFolder());
+//            newFolder.set_FolderName(arguments.get(0));
+//            newFolder.save(RefreshMode.NO_REFRESH);
+//            System.out.println("Folder is create");
+//        } else System.out.println(Constants.OperationErrors.NULL_NAME);
     }
     public void createRootFolder(String name){
-        Folder newFolder = Factory.Folder.createInstance(os, null);
+        Connect connect = new Connect();
+        try {
+            connect.connect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Folder newFolder = Factory.Folder.createInstance(connect.getObjectStore(), null);
         newFolder.set_Parent(DocumentFileNet.getCurrentFolder());
         newFolder.set_FolderName(name);
         newFolder.save(RefreshMode.NO_REFRESH);
-        System.out.println("Folder is create");
     }
 }

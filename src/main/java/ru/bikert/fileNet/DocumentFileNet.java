@@ -5,17 +5,11 @@ import com.filenet.api.core.IndependentObject;
 import com.filenet.api.core.ObjectStore;
 import com.filenet.api.exception.EngineRuntimeException;
 
-import com.filenet.api.property.Property;
-import com.filenet.apiimpl.core.ReferentialContainmentRelationshipImpl;
-
-import ru.bikert.fileNet.TypeContainable.APDocument;
 import ru.bikert.fileNet.fileNetConnect.Connect;
+import ru.bikert.fileNet.operationUI.GotoOperationUI;
 import ru.bikert.fileNet.operations.*;
 
-import javax.inject.Named;
-import javax.servlet.http.HttpServlet;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,69 +17,36 @@ public class DocumentFileNet {
 
     private static List<Operation> operations = new ArrayList<Operation>();
 
-    private static boolean exit = true;
-    private static String input;
-    private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     private static List<String> arguments = new ArrayList<String>();
     private static ObjectStore os;
     private static Folder currentFolder;
+    public  static Folder rootFolder;
+    private Connect fileNet;
 
     private static IndependentObject currentEmployee;
 
-    public static void start() throws Exception {
+    public void start() throws Exception {
 
         try {
-            Connect fileNet = new Connect();
+            fileNet = new Connect();
             fileNet.connect();
-            os = Connect.getObjectStore();
+            os = fileNet.getObjectStore();
             currentFolder = os.get_RootFolder();
-            myRootFolder();
+            rootFolder = myFolder();
 
-            ReplaceEmployee.retrieving();
-            ReplaceEmployee.replace();
+           // ReplaceEmployee.retrieving();
+           // ReplaceEmployee.replace();
            // TrafficDocument trafficDocument = new TrafficDocument();
            // trafficDocument.trafficStatus(OperationHelper.get_Document("Order6","/Программа адаптации/приказы" ));
            // AddContent addContent = new AddContent();
            // addContent.setDoc("C:\\Users\\ebikert\\Documents\\work\\System_events_Filenet.docx", "/Программа адаптации/приказы", "Order6");
-            RetrievingDocumentContent.retrievingContent("/Программа адаптации/приказы/Order6");
-
-
-            operations.add(new FolderCreateOperation());
-            operations.add(new DocumentCreateOperation());
-            operations.add(new HelpOperation());
-            operations.add(new GoToOperation());
-            operations.add(new PrintHierarchyOperation());
-            operations.add(new GoToParentOperation());
-            operations.add(new PrintCurrentOperation());
-            operations.add(new DeliteOperation());
-            operations.add(new ExitOperation());
-            operations.add(new CreateOrderOperation());
-
-            new HelpOperation().perform(arguments);
-
-            while (exit) {
-                System.out.println("\n" + currentFolder.get_PathName());
-                System.out.println(currentEmployee.getProperties().get("FullName").getStringValue());
-
-                input = bufferedReader.readLine();
-                String[] line = input.split("\\s");
-                for (int i = 1; i < line.length; i++) {
-                    arguments.add(line[i]);
-                }
-                for (Operation op : operations) {
-                    if (op.getTitle().equals(line[0])) {
-                        System.out.println("perform " + op.getTitle() + " with arguments " + arguments);
-                        op.perform(arguments);
-                    }
-                }
-                arguments.clear();
-            }
+           // RetrievingDocumentContent.retrievingContent("/Программа адаптации/приказы/Order6");
 
         } catch (EngineRuntimeException ex) {
             System.out.println(ex.toString());
             throw new Exception(ex.getExceptionCode().toString());
         } finally {
-            Connect.getUserContext().popSubject();
+            fileNet.getUserContext().popSubject();
             Operation.closeReader();
         }
     }
@@ -106,27 +67,24 @@ public class DocumentFileNet {
         DocumentFileNet.currentFolder = currentFolder;
     }
 
-    public static void setExit(boolean exit) { DocumentFileNet.exit = exit; }
-
     public static void setCurrentEmployee(IndependentObject currentEmployee) { DocumentFileNet.currentEmployee = currentEmployee; }
 
     public static IndependentObject getCurrentEmployee() { return currentEmployee; }
 
 
-    private static void myRootFolder(){
-        if(!OperationHelper.folder("Программа адаптации", os.get_RootFolder())){
+    public Folder myFolder(){
+        Folder folder = OperationHelper.get_Folder("Программа адаптации");
+        if(folder == null){
             new FolderCreateOperation().createRootFolder("Программа адаптации");
+            folder = OperationHelper.get_Folder("Программа адаптации");
         }
-        arguments.add("Программа адаптации");
-        new GoToOperation().perform(arguments);
-        arguments.clear();
         String[] name = {"приказы", "договоры", "заявления", "cотрудники"};
         for (String s: name) {
             if(!OperationHelper.folder(s,currentFolder)){
                 new FolderCreateOperation().createRootFolder(s);
             }
         }
-
+        return folder;
     }
 
 }

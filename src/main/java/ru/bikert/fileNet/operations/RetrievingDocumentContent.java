@@ -24,41 +24,41 @@ import java.util.stream.Stream;
 
 public class RetrievingDocumentContent {
 
-    public static void retrievingContent(String path){
-        try{
-            PropertyFilter pf = new PropertyFilter();
-            pf.addIncludeProperty(new FilterElement(null, null, null, PropertyNames.CONTENT_SIZE, null) );
-            pf.addIncludeProperty(new FilterElement(null, null, null, PropertyNames.CONTENT_ELEMENTS, null) );
-            pf.addIncludeProperty(new FilterElement(null,null,null,PropertyNames.NAME,null));
-            Document doc=Factory.Document.fetchInstance(Connect.getObjectStore(), path, pf );
-
-            System.out.println("No. of document content elements: " + doc.get_ContentElements().size() + "\n" +
-                    "Total size of content: " + doc.get_ContentSize() + "\n");
-
-                    System.out.println("Doc Title :: "+ doc.get_Name());
-                    ContentElementList docContentList = doc.get_ContentElements();
-                    Iterator iter = docContentList.iterator();
-                    String filepath = "C:\\Users\\ebikert\\IdeaProjects\\DocumentStorageFileNet\\Dowonload\\";
-                    FileOutputStream fos = new FileOutputStream(filepath+doc.get_Name());
-                    while (iter.hasNext() )
-                    {
-                        ContentTransfer ct = (ContentTransfer) iter.next();
-                        // Print element sequence number and content type of the element.
-                        System.out.println("\nElement Sequence number: " + ct.get_ElementSequenceNumber().intValue() + "\n" +"Content type: " + ct.get_ContentType() + "\n");
-                        InputStream stream = ct.accessContentStream();
-                        byte[] buffer = new byte[4096000];
-                        int bytesRead = 0;
-                        while ((bytesRead = stream.read(buffer)) != -1) {
-                            System.out.print(".");
-                            fos.write(buffer,0,bytesRead);
-                        }
-                        System.out.println("done!");
-                        fos.close();
-                        stream.close();
-                    }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
-    }
+//    public static void retrievingContent(String path){
+//        try{
+//            PropertyFilter pf = new PropertyFilter();
+//            pf.addIncludeProperty(new FilterElement(null, null, null, PropertyNames.CONTENT_SIZE, null) );
+//            pf.addIncludeProperty(new FilterElement(null, null, null, PropertyNames.CONTENT_ELEMENTS, null) );
+//            pf.addIncludeProperty(new FilterElement(null,null,null,PropertyNames.NAME,null));
+//            Document doc=Factory.Document.fetchInstance(Connect.getObjectStore(), path, pf );
+//
+//            System.out.println("No. of document content elements: " + doc.get_ContentElements().size() + "\n" +
+//                    "Total size of content: " + doc.get_ContentSize() + "\n");
+//
+//                    System.out.println("Doc Title :: "+ doc.get_Name());
+//                    ContentElementList docContentList = doc.get_ContentElements();
+//                    Iterator iter = docContentList.iterator();
+//                    String filepath = "C:\\Users\\ebikert\\IdeaProjects\\DocumentStorageFileNet\\Dowonload\\";
+//                    FileOutputStream fos = new FileOutputStream(filepath+doc.get_Name());
+//                    while (iter.hasNext() )
+//                    {
+//                        ContentTransfer ct = (ContentTransfer) iter.next();
+//                        // Print element sequence number and content type of the element.
+//                        System.out.println("\nElement Sequence number: " + ct.get_ElementSequenceNumber().intValue() + "\n" +"Content type: " + ct.get_ContentType() + "\n");
+//                        InputStream stream = ct.accessContentStream();
+//                        byte[] buffer = new byte[4096000];
+//                        int bytesRead = 0;
+//                        while ((bytesRead = stream.read(buffer)) != -1) {
+//                            System.out.print(".");
+//                            fos.write(buffer,0,bytesRead);
+//                        }
+//                        System.out.println("done!");
+//                        fos.close();
+//                        stream.close();
+//                    }
+//        }
+//        catch(Exception e){
+//            e.printStackTrace();
+//        }
+//    }
 }

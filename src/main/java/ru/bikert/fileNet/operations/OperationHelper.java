@@ -36,7 +36,13 @@ public class OperationHelper {
     }
 
     public static Document get_Document(String name, String path){
-        Folder folderOj= Factory.Folder.fetchInstance(Connect.getObjectStore(), path, null);
+        Connect connect = new Connect();
+        try {
+            connect.connect();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Folder folderOj= Factory.Folder.fetchInstance(connect.getObjectStore(), path, null);
         DocumentSet documents = folderOj.get_ContainedDocuments();
         Iterator itDoc = documents.iterator();
         while(itDoc.hasNext()) {

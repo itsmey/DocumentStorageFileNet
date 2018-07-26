@@ -12,6 +12,6 @@ public class ExitOperation extends Operation {
     }
 
     public void perform(List<String> arguments) {
-        DocumentFileNet.setExit(false);
+       // DocumentFileNet.setExit(false);
     }
 }

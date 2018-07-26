@@ -8,9 +8,9 @@ import javax.security.auth.Subject;
 
 public class Connect {
 
-    private static ObjectStore objectStore;
-    private static UserContext userContext;
-    private static Subject subject;
+    private ObjectStore objectStore;
+    private UserContext userContext;
+    private Subject subject;
 
     public void connect() throws Exception {
         Connection conn = Factory.Connection.getConnection(ConstantConnect.URL);
@@ -26,11 +26,11 @@ public class Connect {
 
     }
 
-    public static ObjectStore getObjectStore(){
-        return objectStore;
+    public ObjectStore getObjectStore(){
+        return this.objectStore;
     }
-    public static UserContext getUserContext() {
-        return userContext;
+    public UserContext getUserContext() {
+        return this.userContext;
     }
 
 }

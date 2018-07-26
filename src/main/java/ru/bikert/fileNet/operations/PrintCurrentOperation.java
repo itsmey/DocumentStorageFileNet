@@ -11,32 +11,37 @@ import ru.bikert.fileNet.DocumentFileNet;
 import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.fileNetConnect.Connect;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class PrintCurrentOperation extends Operation {
-
-    public PrintCurrentOperation() {
-        super(Constants.OperationNames.CURRENT_PRINT, "", Constants.OperationDescription.CURRENT_PRINT);
-    }
-
-    public void perform(List<String> arguments) {
-        ObjectStore objStore = Connect.getObjectStore();
-        String path = DocumentFileNet.getPath();
-        Folder folderOj= Factory.Folder.fetchInstance(objStore, path, null);
-        DocumentSet documents = folderOj.get_ContainedDocuments();
-        Iterator itDoc = documents.iterator();
-        while(itDoc.hasNext()) {
-            Document retrieveDoc = (Document) itDoc.next();
-            String name = retrieveDoc.get_Name();
-            System.out.println("APDocument: " + name);
-        }
-        FolderSet subFolders= folderOj.get_SubFolders();
-        Iterator it = subFolders.iterator();
-        while(it.hasNext()){
-            Folder subFolder= (Folder) it.next();
-            String name = (subFolder).get_FolderName();
-            System.out.println(name);
-        }
-    }
+public class PrintCurrentOperation  {
+//    public List<Document> documentsSet = new ArrayList<>();
+//    public List<Folder> foldersSet = new ArrayList<>();
+//
+//    public PrintCurrentOperation() {
+//        super(Constants.OperationNames.CURRENT_PRINT, "", Constants.OperationDescription.CURRENT_PRINT);
+//    }
+//
+//    public void perform(List<String> arguments) {
+//        ObjectStore objStore = Connect.getObjectStore();
+//        String path = DocumentFileNet.getPath();
+//        Folder folderOj= Factory.Folder.fetchInstance(objStore, path, null);
+//        DocumentSet documents = folderOj.get_ContainedDocuments();
+//        Iterator itDoc = documents.iterator();
+//        while(itDoc.hasNext()) {
+//            Document retrieveDoc = (Document) itDoc.next();
+//            String name = retrieveDoc.get_Name();
+//            documentsSet.add(retrieveDoc);
+//            System.out.println("APDocument: " + name);
+//        }
+//        FolderSet subFolders= folderOj.get_SubFolders();
+//        Iterator it = subFolders.iterator();
+//        while(it.hasNext()){
+//            Folder subFolder= (Folder) it.next();
+//            foldersSet.add(subFolder);
+//            String name = subFolder.get_FolderName();
+//            System.out.println(name);
+//        }
+//    }
 }

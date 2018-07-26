@@ -7,8 +7,17 @@
         <servlet-name>mainWebApp</servlet-name>
         <servlet-class>ru.bikert.fileNet.MainWebApp</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>goToOperationUI</servlet-name>
+        <servlet-class>ru.bikert.fileNet.operationUI.GotoOperationUI</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>mainWebApp</servlet-name>
         <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>goToOperationUI</servlet-name>
+        <url-pattern>/goto</url-pattern>
     </servlet-mapping>
 </web-app>
