@@ -3,12 +3,8 @@ package ru.bikert.fileNet.operationUI;
 import com.filenet.api.core.ObjectStore;
 import org.json.simple.JSONObject;
 import ru.bikert.fileNet.fileNetConnect.Connect;
-
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public abstract class OperationUI extends HttpServlet {
 
@@ -38,8 +34,6 @@ public abstract class OperationUI extends HttpServlet {
             objectStore = conn.getObjectStore();
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            conn.getUserContext().popSubject();
         }
         return objectStore;
     }

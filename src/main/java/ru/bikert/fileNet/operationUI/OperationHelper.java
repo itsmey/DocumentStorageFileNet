@@ -1,4 +1,4 @@
-package ru.bikert.fileNet.operations;
+package ru.bikert.fileNet.operationUI;
 
 import com.filenet.api.collection.DocumentSet;
 import com.filenet.api.core.Document;

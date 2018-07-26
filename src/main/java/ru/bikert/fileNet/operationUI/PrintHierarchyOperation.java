@@ -1,36 +1,24 @@
-package ru.bikert.fileNet.operations;
+package ru.bikert.fileNet.operationUI;
 
 import com.filenet.api.collection.DocumentSet;
 import com.filenet.api.collection.FolderSet;
 import com.filenet.api.core.*;
-
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import ru.bikert.fileNet.DocumentFileNet;
-import ru.bikert.fileNet.Operation;
 import ru.bikert.fileNet.Printer;
-import ru.bikert.fileNet.fileNetConnect.Connect;
-
+import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
 import java.util.List;
 
-public class PrintHierarchyOperation extends Operation {
-    private static ObjectStore objStore;
+public class PrintHierarchyOperation extends OperationUI {
+    private  ObjectStore objStore;
 
     public PrintHierarchyOperation() {
-        super(Constants.OperationNames.PRINT, " ", Constants.OperationDescription.PRINT);
+        super("", "");
     }
 
-    public void perform(List<String> arguments) {
-    }
-    public static void printHierarchy(Printer printer){
-        Connect conn = new Connect();
-        try {
-            conn.connect();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        objStore = conn.getObjectStore();
+    public void printHierarchy(Printer printer){
+        objStore = getOS();
         String path = DocumentFileNet.rootFolder.get_PathName();
         printHierarchy(path, objStore, printer);
     }
@@ -66,5 +54,10 @@ public class PrintHierarchyOperation extends Operation {
             e.printStackTrace();
         }
         printer.printCloseUlTag();
+    }
+
+    @Override
+    public JSONObject perform(HttpServletRequest req) throws Exception {
+        return null;
     }
 }

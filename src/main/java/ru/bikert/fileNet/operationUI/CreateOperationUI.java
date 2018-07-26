@@ -4,9 +4,8 @@ import com.filenet.api.constants.AutoUniqueName;
 import com.filenet.api.constants.DefineSecurityParentage;
 import com.filenet.api.constants.RefreshMode;
 import com.filenet.api.core.*;
+import org.json.simple.JSONObject;
 import ru.bikert.fileNet.DocumentFileNet;
-import ru.bikert.fileNet.fileNetConnect.Connect;
-import ru.bikert.fileNet.operations.OperationHelper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
@@ -18,7 +17,7 @@ public class CreateOperationUI extends OperationUI{
     }
 
     @Override
-    public void perform(HttpServletRequest req) {
+    public JSONObject perform(HttpServletRequest req) {
         ObjectStore objStore = getOS();
         Folder folder = DocumentFileNet.getCurrentFolder();
         switch (folder.get_FolderName()){
@@ -29,6 +28,7 @@ public class CreateOperationUI extends OperationUI{
             case UIConstants.DocumentClass.STATEMENTS:
                 statementsCreate(folder, req,objStore);
         }
+        return null;
     }
     private void orderCreate(Folder folder, HttpServletRequest req, ObjectStore os){
 

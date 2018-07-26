@@ -1,4 +1,6 @@
 package ru.bikert.fileNet.operationUI;
+import org.json.simple.JSONObject;
+
 import javax.servlet.http.HttpServletRequest;
 
 public class EditOperationUI extends OperationUI {
@@ -9,7 +11,8 @@ public class EditOperationUI extends OperationUI {
     }
 
     @Override
-    public void perform(HttpServletRequest req) {
+    public JSONObject perform(HttpServletRequest req) {
         String name = req.getParameter("name");
+        return new JSONObject();
     }
 }

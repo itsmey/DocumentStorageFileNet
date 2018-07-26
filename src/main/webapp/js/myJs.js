@@ -38,24 +38,6 @@ function table() {
 }
 
 function goTo(i) {
-    var body = i;
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/start/goto', true);
-    xhr.send(body);
-    xhr.onreadystatechange = function() { // (3)
-        if (xhr.readyState != 4) return;
-
-        if (xhr.status != 200) {
-            alert(xhr.status + ': ' + xhr.statusText);
-        } else {
-            var ul = document.getElementById('printDocument');
-            ul.innerHTML = xhr.responseText;
-        }
-    }
-}
-
-
-function printDocument(i) {
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/start/goto', true);
     xhr.send(i);
@@ -65,9 +47,14 @@ function printDocument(i) {
         if (xhr.status != 200) {
             alert(xhr.status + ': ' + xhr.statusText);
         } else {
+            //JSONParserToList(xhr.responseText)
             var ul = document.getElementById('printDocument');
             ul.innerHTML = xhr.responseText;
         }
     }
+}
+function JSONParserToList(json) {
+    var json = JSON.parse(json);
+    document.getElementById('currentFolder').innerText(json.parent);
 }
 
